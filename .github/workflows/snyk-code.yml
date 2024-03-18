@@ -10,7 +10,7 @@ jobs:
         run: snyk code test --org=${{ secrets.SNYK_ORG }} --sarif > snyk-sarif2.json
         continue-on-error: true
         env:
-           SNYK_TOKEN: bfc9e943-cd22-4fdf-8fa4-c468a07911bc
+           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
